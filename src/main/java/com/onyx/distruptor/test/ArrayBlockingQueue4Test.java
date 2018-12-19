@@ -3,7 +3,7 @@ package com.onyx.distruptor.test;
 import java.util.concurrent.ArrayBlockingQueue;
 
 /**
- * ArrayBlockingQueue 的测试
+ * ArrayBlockingQueue 的性能测试
  */
 public class ArrayBlockingQueue4Test {
 

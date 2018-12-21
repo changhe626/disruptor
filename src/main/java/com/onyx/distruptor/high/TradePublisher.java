@@ -2,7 +2,6 @@ package com.onyx.distruptor.high;
 
 import com.lmax.disruptor.EventTranslator;
 import com.lmax.disruptor.RingBuffer;
-
 import java.util.Random;
 import java.util.concurrent.CountDownLatch;
 
@@ -11,6 +10,8 @@ public class TradePublisher implements Runnable {
     private CountDownLatch countDownLatch;
     private RingBuffer<Trade> ringBuffer;
 
+    private static int publishCount=1;
+
     public TradePublisher(CountDownLatch countDownLatch, RingBuffer<Trade> ringBuffer) {
         this.countDownLatch=countDownLatch;
         this.ringBuffer=ringBuffer;
@@ -18,15 +19,13 @@ public class TradePublisher implements Runnable {
 
     @Override
     public void run() {
-
         //新的提交任务的方式
-
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < publishCount; i++) {
             ringBuffer.publishEvent(new TradeEventTranslator());
-            countDownLatch.countDown();
         }
-
+        countDownLatch.countDown();
     }
+
 }
 
 

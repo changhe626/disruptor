@@ -65,3 +65,10 @@ public class Main {
 
 
 }
+
+/**
+ * 大中台的核心链路实现
+ * 1.有限状态机-例如spring-StateMachine
+ * 2.使用Disruptor
+ *
+ */

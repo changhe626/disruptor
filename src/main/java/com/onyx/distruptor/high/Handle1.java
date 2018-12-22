@@ -16,7 +16,7 @@ public class Handle1 implements EventHandler<Trade>, WorkHandler<Trade> {
         onEvent(event);
     }
 
-    //WorkHandler
+    //WorkHandler ,用在多消费者的时候,多消费者的时候不能使用EventHandle
     @Override
     public void onEvent(Trade event) throws Exception {
         System.out.println("Handle1  : set name ");

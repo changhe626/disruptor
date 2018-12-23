@@ -17,6 +17,7 @@ public class Data implements Serializable {
 	}
 
 	public Long getId() {
+        System.out.println("这是getID方法:"+id);
 		return id;
 	}
 	public void setId(Long id) {
@@ -28,6 +29,12 @@ public class Data implements Serializable {
 	public void setName(String name) {
 		this.name = name;
 	}
-	
-	
+
+	@Override
+	public String toString() {
+		return "Data{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				'}';
+	}
 }

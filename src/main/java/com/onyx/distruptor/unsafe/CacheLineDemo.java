@@ -1,4 +1,4 @@
-package com.onyx.distruptor.quickstart;
+package com.onyx.distruptor.unsafe;
 
 /**
  * @author zk
